@@ -1,0 +1,14 @@
+steps:
+- task: synopsys-detect.synopsys-detect.synopsys-detect-task.SynopsysDetectTask@8
+  displayName: 'Run Synopsys Detect for your build '
+  inputs:
+    BlackDuckService: HubTest
+    DetectArguments: |
+     --detect.blackduck.signature.scanner.snippet.matching=FULL_SNIPPET_MATCHING
+     --detect.blackduck.signature.scanner.individual.file.matching=ALL
+     --detect.detector.search.depth=100
+     --detect.blackduck.signature.scanner.upload.source.mode=true
+     --detect.npm.dependency.types.excluded: DEV
+     --detect.project.name=Azure_WebGoat_Pipline_Test_Andrei_S
+     --detect.project.version.name=develop
+     
